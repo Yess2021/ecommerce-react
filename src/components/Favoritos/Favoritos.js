@@ -1,13 +1,13 @@
 import './Favoritos.css'
 
 const Favoritos = () => {
-    return <section class="favoritos">
+    return <section className="favoritos">
 
     <section>
-        <h1 class="favoritos-titulo">Favoritos</h1>
+        <h1 className="favoritos-titulo">Favoritos</h1>
     </section>
 
-    <div class="section-cards-container"></div>
+    <div className="section-cards-container"></div>
 
 </section>
 }

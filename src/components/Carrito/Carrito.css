@@ -40,8 +40,6 @@
     font-family: "Roboto", sans-serif; 
 }
 
-
-
 .carrito table button[id*="btnBorrar-"] {
     margin: 15px auto;
     display: block;

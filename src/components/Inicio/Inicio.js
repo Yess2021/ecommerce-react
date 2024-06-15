@@ -1,6 +1,9 @@
 import './Inicio.css'
 
-const Inicio = () => {
+const Inicio = ({productos}) => {
+
+const listaFavoritos = []
+
     return <section className="inicio">
     <div id="img1-inicio">
         <div id="img2-inicio"></div>
@@ -14,7 +17,30 @@ const Inicio = () => {
             <h1>Conjuntos de Bikinis</h1>
         </div>
 
-        <div className="section-cards-container"></div>
+        <div className="section-cards-container">
+
+        {productos.map((producto, index) =>
+            <section class="card-container" id={`cc-${producto.id}`}> 
+                        <img src={producto.foto} /> 
+                        <button class="favoritosIcon" id={`agregarFavoritos-${producto.nombre}`} value={producto.nombre} > 
+                        <img id={`img-${producto.nombre}`} src={listaFavoritos.includes(producto.nombre) ? 'icons/favorite-checked.svg' : 'icons/favorite.svg'} />
+                        </button>
+                        <h4>{producto.nombre}</h4>
+                        <p>{producto.detalles}</p>
+                        <p>{producto.precio.toLocaleString()}</p>
+                        <p class="tallasContainer">
+
+                        {/* <label class="tallas tallaSeleccionar" id={`${producto.id + "," + valor}`}> ${valor}</label> */}
+                        </p><div class="colores-container">
+
+                        <div class="colores" id={`${producto.id + "," + index}`} style={{backgroundColor: "red"}}></div>
+                        </div>
+                        <button id={`btnComprar-${producto.id}`} disabled>Agregar al Carrito</button>
+            </section>
+        )}
+
+
+        </div>
 
         <button className="ver-mas">Ver mas</button>
     </div>

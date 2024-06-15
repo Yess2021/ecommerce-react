@@ -9,13 +9,24 @@ import Favoritos from './components/Favoritos/Favoritos'
 import Registro from './components/Registro/Registro'
 import Carrito from './components/Carrito/Carrito'
 import NoMatch from './components/NoMatch/NoMatch'
+import { useEffect, useState } from "react";
+import servicioProductos from "./data/servicioProductos";
 
 function App() {
+  const [productos, setProductos] = useState([])
+  console.log("productos", productos)
+  
+  useEffect(()=> {
+      servicioProductos.getAll().then((prod) =>
+          setProductos(prod)
+      )
+  }, [])
+
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Inicio />} />
+          <Route index element={<Inicio productos={productos} />} />
           <Route path="alta" element={<Alta />} />
           <Route path="contacto" element={<Contacto />} />
           <Route path="nosotros" element={<Nosotros />} />

@@ -1,16 +1,20 @@
 import './Carrito.css'
 
 const Carrito = () => {
-    return <section class="carrito">
-    <h1 class="carrito-titulo">carrito de compras</h1>
+
+
+
+
+    return <section className="carrito">
+    <h1 className="carrito-titulo">carrito de compras</h1>
     
-    <button class="carrito__borrar">Borrar</button>
+    <button className="carrito__borrar">Borrar</button>
     <table></table>
-    <section id="seccionTotal" class="total">
+    <section id="seccionTotal" className="total">
         <div>Total Estimado</div>
         <div id="total">$$$</div>         
     </section>    
-    <button class="carrito__pedir">Pedir</button>
+    <button className="carrito__pedir">Pedir</button>
 </section>
 
 }

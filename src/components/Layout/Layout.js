@@ -21,8 +21,8 @@ const Layout = () => {
         </nav>
 
         <div className="iconos-header">
-            <a className="logoFav" href="" id="favoritos"></a>
-            <a className="logoRegistro" href="" id="registro"></a>
+            <Link to="/favoritos" className="logoFav" id="favoritos"></Link>
+            <Link to="/registro" className="logoRegistro" id="registro"></Link>
 
             <div className="search-container">
                 <div id="logoBuscar"></div> 
@@ -32,9 +32,9 @@ const Layout = () => {
                 </div>
             </div>
 
-            <a className="logoCarrito" href="" id="carrito">
+            <Link to="/carrito" className="logoCarrito" href="" id="carrito">
                 <div id="contadorCarrito"></div>
-            </a>
+            </Link>
         </div>
 
         <button className="menu-hamburger" id="hamburger"></button>
