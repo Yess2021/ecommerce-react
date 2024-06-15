@@ -1,9 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
 import './Layout.css'
+import Footer from "../Footer/Footer";
 
 const Layout = () => {
     return (
-      <body>
+      <div>
        <header>
         <div className="container-mariposa">
             <h2 id="nombre-empresa">Mariposa 88</h2>
@@ -69,7 +70,8 @@ const Layout = () => {
   
         <Outlet />
 
-      </body>
+        <Footer />
+      </div>
     )
   }
 
