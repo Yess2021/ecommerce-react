@@ -23,8 +23,6 @@ function App() {
   const [showSearch, setShowSearch] = useState(false);
   const [search, setSearch] = useState("");
 
-  console.log("productos", productos);
-
   useEffect(() => {
     servicioProductos.getAll().then((prod) => setProductos(prod));
   }, []);
