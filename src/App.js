@@ -19,6 +19,8 @@ function App() {
   const [carrito, setCarrito] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
   const [textoAlert, setTextoAlert] = useState("");
+  const [showSearch, setShowSearch] = useState(true);
+  const [search, setSearch] = useState("");
 
   console.log("productos", productos);
 
@@ -45,8 +47,6 @@ function App() {
       )
     );
 
-    // Falta descontar del stock al agregar
-
     const productoAgregado = {
       ...producto,
       datosCompra: {
@@ -67,7 +67,13 @@ function App() {
         <Route
           path="/"
           element={
-            <Layout textoAlert={textoAlert} contadorCarrito={carrito.length} />
+            <Layout
+              textoAlert={textoAlert}
+              contadorCarrito={carrito.length}
+              setSearch={setSearch}
+              showSearch={showSearch}
+              setShowSearch={setShowSearch}
+            />
           }
         >
           <Route
@@ -78,6 +84,7 @@ function App() {
                 favoritos={favoritos}
                 mostrarAlert={mostrarAlert}
                 agregar={agregar}
+                search={search}
               />
             }
           />
