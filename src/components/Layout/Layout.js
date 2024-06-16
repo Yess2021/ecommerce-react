@@ -9,6 +9,7 @@ const Layout = ({
   contadorCarrito,
   setSearch,
   showSearch,
+  showAlert,
   setShowSearch,
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -129,7 +130,7 @@ const Layout = ({
       </div>
 
       <Outlet />
-      <Alert texto={textoAlert} />
+      <Alert texto={textoAlert} show={showAlert} />
       <Footer />
     </div>
   );

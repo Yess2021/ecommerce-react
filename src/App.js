@@ -18,8 +18,9 @@ function App() {
   const [productos, setProductos] = useState([]);
   const [carrito, setCarrito] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
   const [textoAlert, setTextoAlert] = useState("");
-  const [showSearch, setShowSearch] = useState(true);
+  const [showSearch, setShowSearch] = useState(false);
   const [search, setSearch] = useState("");
 
   console.log("productos", productos);
@@ -28,9 +29,16 @@ function App() {
     servicioProductos.getAll().then((prod) => setProductos(prod));
   }, []);
 
-  const mostrarAlert = (texto) => setTextoAlert(texto);
+  const mostrarAlert = (texto, tiempo) => {
+    setShowAlert(true)
+    setTextoAlert(texto)
+    setTimeout(()=>{
+      setShowAlert(false)
+    }, tiempo * 1000)
+  }
 
   const agregar = (producto, tallaSeleccionada, colorSeleccionado) => {
+    mostrarAlert("Se agregó el producto", 2)
     const productoId = producto.id;
     const tallaIndex = tallas.indexOf(tallaSeleccionada);
     const colorIndex = producto.colores[0].indexOf(colorSeleccionado);
@@ -69,6 +77,7 @@ function App() {
           element={
             <Layout
               textoAlert={textoAlert}
+              showAlert={showAlert}
               contadorCarrito={carrito.length}
               setSearch={setSearch}
               showSearch={showSearch}

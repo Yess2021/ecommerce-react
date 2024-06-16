@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Alert.css";
 
-const Alert = ({ texto }) => {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setShow(true);
-    setTimeout(()=> setShow(false), 2000)
-  }, [texto]);
-
+const Alert = ({ show, texto }) => {
   return (
     <div
       id="alert"
