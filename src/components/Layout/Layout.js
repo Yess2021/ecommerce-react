@@ -1,8 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
 import './Layout.css'
 import Footer from "../Footer/Footer";
+import Alert from "../Alert/Alert";
 
-const Layout = () => {
+const Layout = ({textoAlert, contadorCarrito}) => {
     return (
       <div>
        <header>
@@ -33,7 +34,7 @@ const Layout = () => {
             </div>
 
             <Link to="/carrito" className="logoCarrito" href="" id="carrito">
-                <div id="contadorCarrito"></div>
+                {contadorCarrito !==0 ? <div id="contadorCarrito">{contadorCarrito}</div> : ''}
             </Link>
         </div>
 
@@ -69,7 +70,7 @@ const Layout = () => {
     </div>
   
         <Outlet />
-
+        <Alert texto={textoAlert} />
         <Footer />
       </div>
     )

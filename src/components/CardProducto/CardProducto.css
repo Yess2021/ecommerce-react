@@ -1,0 +1,17 @@
+.card-container button[id^="btnComprar-"] {
+    margin: 0px auto 5px;
+    display: block;
+    width: 120px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid #943e2d;
+    background-color: #f26a4e;
+    color: white;
+}
+
+.card-container button[id^="btnComprar-"]:disabled {
+   opacity: 0.7;
+}  

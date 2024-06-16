@@ -272,7 +272,6 @@ input#buscar {
     color: white;
     background-color: red;
     border-radius: 10px;
-    display: none;
     justify-content: center;
     align-items: center;
 }
